@@ -1,5 +1,7 @@
 using System;
 
+// Enhancement: Added a Library of multiple scriptures and randomized the selection.
+// This extends the program beyond a single scripture.
 class Program
 {
     static void Main(string[] args)

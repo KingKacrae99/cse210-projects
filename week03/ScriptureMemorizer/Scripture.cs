@@ -22,8 +22,10 @@ public class Scripture{
             for (int i = 0; i < numberToHide; i++)
             {
                 int value = randomSelector.Next(_words.Count);
-                _words[value].Hide();
-                counter ++;
+                if (!_words[value].IsHidden()){
+                    _words[value].Hide();
+                    counter ++;
+                }
             }
         }
 
