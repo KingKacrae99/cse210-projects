@@ -23,7 +23,7 @@ public class ReflectionActivity : Activity
         StartActivity("Reflection","This activity will help you refleect on times in your life when you have shown strength and resilience.");
         Console.Clear();
         Random rand = new Random();
-        string prompt = prompts[rand.Next(prompts.Count)];
+        string prompt = prompts[rand.Next(prompts.Count)];                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
         Console.WriteLine(prompt);
         Thread.Sleep(2000);
 
