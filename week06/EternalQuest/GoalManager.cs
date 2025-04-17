@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.IO;
 
 public class GoalManager{
-
+    
     private List<Goal> _goals = new List<Goal>();
     private int _score = 0;
 
-    public void AddGoal(Goal goal){
+    public void AddGoal(Goal goal)
+    {
         _goals.Add(goal);
     }
 
-    public void RecordGoalEvent(int index){
+    public void RecordGoalEvent(int index)
+    {
         _score += _goals[index].RecordEvent();
     }
 
-    public void DisplayGoals(){
+    public void DisplayGoals()
+    {
         for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {_goals[i].GetStatus()}");
@@ -23,7 +26,8 @@ public class GoalManager{
         Console.WriteLine($"Total Score: {_score}");
     }
 
-    public void SaveGoals(string filename){
+    public void SaveGoals(string filename)
+    {
         using StreamWriter writer = new StreamWriter(filename);
         writer.WriteLine(_score);
         foreach (Goal goal in _goals)
@@ -44,7 +48,7 @@ public class GoalManager{
             switch (parts[0])
             {
                 case "Simple":
-                    AddGoal(new SimpleGoal(parts[1], int.Parse(parts[2])));
+                    AddGoal(new SimpleGoal(parts[1], int.Parse(parts[2]), bool.Parse(parts[3])));
                     break;
                 case "Eternal":
                     AddGoal(new EternalGoal(parts[1], int.Parse(parts[2])));

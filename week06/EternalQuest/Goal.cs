@@ -1,5 +1,5 @@
 public abstract class Goal{
-    
+
     protected string _name;
     protected int _points;
 
