@@ -1,5 +1,6 @@
 using System;
 
+//I implemented additional features such as goal catergoziation, enchanced progress tracking, and advanced saving/ loading functionality.
 class Program
 {
     static void Main()
