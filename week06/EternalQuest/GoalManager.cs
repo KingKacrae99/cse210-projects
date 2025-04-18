@@ -7,6 +7,8 @@ public class GoalManager{
     private List<Goal> _goals = new List<Goal>();
     private int _score = 0;
 
+    public List<Goal> Goals => _goals;
+
     public void AddGoal(Goal goal)
     {
         _goals.Add(goal);
@@ -54,9 +56,7 @@ public class GoalManager{
                     AddGoal(new EternalGoal(parts[1], int.Parse(parts[2])));
                     break;
                 case "Checklist":
-                    var goal = new ChecklistGoal(parts[1], int.Parse(parts[2]), int.Parse(parts[3]), int.Parse(parts[5]));
-                    typeof(ChecklistGoal).GetField("_currentCount", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-                                          .SetValue(goal, int.Parse(parts[4]));
+                    var goal = new ChecklistGoal(parts[1], int.Parse(parts[2]), int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]));
                     AddGoal(goal);
                     break;
             }
